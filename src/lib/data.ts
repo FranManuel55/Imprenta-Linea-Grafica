@@ -91,7 +91,7 @@ export const products: Product[] = [
     description: "Bolsa de tela friselina con impresión a 1 color. Resistente y reutilizable, ideal para comercios.",
     price: 850,
     originalPrice: 1200,
-    image: "/images/cat-bolsas.png",
+    image: "/images/bolsa_friselina.png",
     category: "bolsas",
     badge: "Más Vendido",
     rating: 4.8,

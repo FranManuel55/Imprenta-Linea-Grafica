@@ -7,14 +7,11 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { categories } from "@/lib/data";
 
 const galleryImages = [
-  { src: "/images/cat-bolsas.png", alt: "Bolsas personalizadas", category: "Bolsas" },
-  { src: "/images/cat-etiquetas.png", alt: "Etiquetas de productos", category: "Etiquetas" },
-  { src: "/images/cat-stickers.png", alt: "Stickers troquelados", category: "Stickers" },
-  { src: "/images/cat-tarjetas.png", alt: "Tarjetas de presentación", category: "Tarjetas" },
-  { src: "/images/cat-folleteria.png", alt: "Folletería comercial", category: "Folletería" },
-  { src: "/images/cat-packaging.png", alt: "Packaging personalizado", category: "Packaging" },
-  { src: "/images/hero-bg.png", alt: "Trabajos destacados", category: "Varios" },
-  { src: "/images/cat-bolsas.png", alt: "Bolsas para comercios", category: "Bolsas" },
+  { src: "/images/1.jpeg", alt: "Bolsa Sofi Tienda & Regalería", category: "Bolsas Ecológicas" },
+  { src: "/images/2.jpeg", alt: "Bolsa Pücheritos Baby Kids", category: "Bolsas de Friselina" },
+  { src: "/images/3.jpeg", alt: "Bolsa Tierra Clothes", category: "Bolsas Ecológicas" },
+  { src: "/images/4.jpeg", alt: "Bolsa Ficción - Streetwear", category: "Bolsas de Tela" },
+  { src: "/images/5.jpeg", alt: "Bolsa Badalo Concept Store", category: "Bolsas de Friselina" },
 ];
 
 export default function CommunityGallery() {
@@ -63,8 +60,7 @@ export default function CommunityGallery() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 text-neutral-400 text-lg max-w-2xl mx-auto"
           >
-            Tus bolsas hablan. Cada producto impreso es publicidad que camina
-            por la ciudad promoviendo tu marca.
+            Tus bolsas hablan por tu marca. Nuestras ecológicas y de friselina son publicidad reutilizable que camina por la ciudad, impulsando tu presencia a donde vayan tus clientes.
           </motion.p>
         </div>
 

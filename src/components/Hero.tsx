@@ -94,9 +94,9 @@ export default function Hero() {
           className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto"
         >
           {[
-            { value: "10+", label: "Años de experiencia" },
+            { value: "20+", label: "Años de experiencia" },
             { value: "500+", label: "Clientes satisfechos" },
-            { value: "50K+", label: "Productos entregados" },
+            { value: "100K+", label: "Productos entregados" },
             { value: "7", label: "Ciudades atendidas" },
           ].map((stat, index) => (
             <motion.div

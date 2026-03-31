@@ -71,9 +71,9 @@ export default function CatalogoPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 pt-20 lg:pt-24 bg-white">
+      <main className="flex-1 bg-white">
         {/* Page Header */}
-        <div className="bg-neutral-950 py-12 lg:py-16">
+        <div className="bg-neutral-950 pt-32 pb-12 lg:pt-40 lg:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -381,7 +381,7 @@ function GridCard({ product }: { product: Product }) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group bg-white rounded-2xl border border-neutral-200 hover:border-red-200 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-red-600/5"
+      className="group relative bg-white rounded-2xl border border-neutral-200 hover:border-red-200 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-red-600/5"
     >
       {product.badge && (
         <div
