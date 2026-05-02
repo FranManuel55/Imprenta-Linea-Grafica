@@ -5,59 +5,6 @@ import { useRef, useState, useEffect } from "react";
 import { MessageCircle, Clock, Percent, Gift } from "lucide-react";
 import { whatsappNumber } from "@/lib/data";
 
-function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const endOfMonth = new Date();
-    endOfMonth.setMonth(endOfMonth.getMonth() + 1);
-    endOfMonth.setDate(0);
-    endOfMonth.setHours(23, 59, 59, 999);
-
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = endOfMonth.getTime() - now;
-
-      if (distance > 0) {
-        setTimeLeft({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000),
-        });
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const units = [
-    { value: timeLeft.days, label: "Días" },
-    { value: timeLeft.hours, label: "Horas" },
-    { value: timeLeft.minutes, label: "Min" },
-    { value: timeLeft.seconds, label: "Seg" },
-  ];
-
-  return (
-    <div className="flex items-center gap-3 sm:gap-4">
-      {units.map((unit, index) => (
-        <div key={unit.label} className="text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl px-3 sm:px-4 py-2 sm:py-3 border border-white/10 min-w-[56px]">
-            <span className="text-2xl sm:text-3xl font-bold text-white tabular-nums">
-              {String(unit.value).padStart(2, "0")}
-            </span>
-          </div>
-          <span className="text-[10px] sm:text-xs text-red-200 mt-1.5 block font-medium">
-            {unit.label}
-          </span>
-          {index < units.length - 1 && (
-            <span className="hidden" />
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function Promotions() {
   const ref = useRef(null);
@@ -66,13 +13,13 @@ export default function Promotions() {
   const promos = [
     {
       icon: <Percent className="w-6 h-6" />,
-      title: "20% OFF",
-      desc: "En tu primer pedido de bolsas",
+      title: "20% de descuento",
+      desc: "En tu primer pedido",
     },
     {
       icon: <Gift className="w-6 h-6" />,
       title: "Diseño gratis",
-      desc: "En pedidos mayores a 500 unidades",
+      desc: "Totalmente personalizado",
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -93,23 +40,13 @@ export default function Promotions() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 rounded-full border border-white/20 text-white/80 text-sm font-medium mb-6"
-          >
-            <Clock className="w-4 h-4" />
-            Oferta por tiempo limitado
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3"
           >
-            ¡Promociones del Mes!
+            ¡Promociones todos los Meses!
           </motion.h2>
 
           <motion.p
@@ -120,16 +57,6 @@ export default function Promotions() {
           >
             Para que sigas creciendo con Línea Gráfica
           </motion.p>
-
-          {/* Countdown */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex justify-center mb-12"
-          >
-            <CountdownTimer />
-          </motion.div>
 
           {/* Promo Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 max-w-3xl mx-auto">
@@ -149,6 +76,15 @@ export default function Promotions() {
               </motion.div>
             ))}
           </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-red-200/80 text-sm sm:text-sm mb-8 max-w-2xl mx-auto"
+          >
+            * Promociones válidas en productos seleccionados
+          </motion.p>
 
           {/* CTA */}
           <motion.a

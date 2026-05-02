@@ -154,10 +154,7 @@ export default function ContactCTA() {
               <Clock className="w-5 h-5 text-red-600 flex-shrink-0" />
               <div>
                 <p className="text-sm font-semibold text-neutral-900">
-                  Lunes a Viernes: 9:00 - 18:00
-                </p>
-                <p className="text-xs text-neutral-500">
-                  Sábados: 9:00 - 13:00
+                  Lunes a Sábados: 9:00 - 16:00
                 </p>
               </div>
             </motion.div>

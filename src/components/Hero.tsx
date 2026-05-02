@@ -95,9 +95,9 @@ export default function Hero() {
         >
           {[
             { value: "20+", label: "Años de experiencia" },
-            { value: "500+", label: "Clientes satisfechos" },
-            { value: "100K+", label: "Productos entregados" },
-            { value: "7", label: "Ciudades atendidas" },
+            { value: "1000+", label: "Clientes satisfechos" },
+            { value: "100 K+", label: "Productos entregados" },
+            { value: "5", label: "Provincias" },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -118,7 +118,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-18 bg-gradient-to-t from-white to-transparent" />
 
       {/* Scroll indicator */}
       <motion.div
