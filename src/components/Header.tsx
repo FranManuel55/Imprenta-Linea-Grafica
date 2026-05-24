@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
@@ -58,8 +59,14 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-red flex items-center justify-center shadow-lg shadow-red-600/30 group-hover:shadow-red-600/50 transition-shadow duration-300">
-                <span className="text-white font-bold text-sm">LG</span>
+              <div className="relative w-11 h-11 rounded-full overflow-hidden bg-white shadow-lg shadow-red-600/30 group-hover:shadow-red-600/50 transition-shadow duration-300">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Línea Gráfica"
+                  fill
+                  sizes="44px"
+                  className="object-contain p-0.5"
+                />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-white font-bold text-lg leading-tight tracking-tight">

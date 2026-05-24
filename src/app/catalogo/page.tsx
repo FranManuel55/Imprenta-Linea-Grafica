@@ -49,12 +49,6 @@ export default function CatalogoPage() {
 
     // Sort
     switch (sortBy) {
-      case "price-asc":
-        result.sort((a, b) => a.price - b.price);
-        break;
-      case "price-desc":
-        result.sort((a, b) => b.price - a.price);
-        break;
       case "name":
         result.sort((a, b) => a.name.localeCompare(b.name));
         break;
@@ -180,8 +174,6 @@ export default function CatalogoPage() {
                       className="appearance-none px-4 pr-8 py-2.5 border border-neutral-300 rounded-xl text-sm font-medium text-neutral-700 bg-white hover:bg-neutral-50 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 outline-none transition-all cursor-pointer"
                     >
                       <option value="featured">Destacados</option>
-                      <option value="price-asc">Menor precio</option>
-                      <option value="price-desc">Mayor precio</option>
                       <option value="name">Nombre A-Z</option>
                       <option value="rating">Mejor valorados</option>
                     </select>
@@ -448,16 +440,6 @@ function GridCard({ product }: { product: Product }) {
           </div>
           <span className="text-xs text-neutral-500">({product.reviewCount})</span>
         </div>
-        <div className="flex items-baseline gap-2">
-          <span className="text-xl font-bold text-neutral-900">
-            ${product.price.toLocaleString("es-AR")}
-          </span>
-          {product.originalPrice && (
-            <span className="text-sm text-neutral-400 line-through">
-              ${product.originalPrice.toLocaleString("es-AR")}
-            </span>
-          )}
-        </div>
       </div>
     </div>
   );
@@ -510,17 +492,7 @@ function ListCard({ product }: { product: Product }) {
             <span className="text-xs text-neutral-500 ml-1">({product.reviewCount})</span>
           </div>
         </div>
-        <div className="flex items-center justify-between mt-4 pt-4 border-t border-neutral-100">
-          <div className="flex items-baseline gap-2">
-            <span className="text-xl font-bold text-neutral-900">
-              ${product.price.toLocaleString("es-AR")}
-            </span>
-            {product.originalPrice && (
-              <span className="text-sm text-neutral-400 line-through">
-                ${product.originalPrice.toLocaleString("es-AR")}
-              </span>
-            )}
-          </div>
+        <div className="flex items-center justify-end mt-4 pt-4 border-t border-neutral-100">
           <div className="flex items-center gap-2">
             <Link
               href={`/producto/${product.id}`}

@@ -18,8 +18,15 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
       transition={{ duration: 0.5, delay: index * 0.08 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative bg-white rounded-2xl border border-neutral-200 hover:border-red-200 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-red-600/5"
+      className="group relative bg-white rounded-2xl border border-neutral-200 hover:border-red-200 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-red-600/5 cursor-pointer"
     >
+      {/* Stretched link: toda la card redirige al producto */}
+      <Link
+        href={`/producto/${product.id}`}
+        aria-label={`Ver ${product.name}`}
+        className="absolute inset-0 z-20"
+      />
+
       {/* Badge */}
       {product.badge && (
         <div className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-xs font-semibold ${
@@ -48,15 +55,12 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
           transition={{ duration: 0.2 }}
           className="absolute inset-0 bg-neutral-950/20 flex items-center justify-center gap-3"
         >
-          <Link
-            href={`/producto/${product.id}`}
-            className="p-3 bg-white rounded-full shadow-lg hover:bg-red-600 hover:text-white text-neutral-900 transition-all duration-300 transform hover:scale-110"
-          >
+          <div className="p-3 bg-white rounded-full shadow-lg text-neutral-900 transition-all duration-300 group-hover:scale-105">
             <Eye className="w-5 h-5" />
-          </Link>
-          <button className="p-3 bg-white rounded-full shadow-lg hover:bg-red-600 hover:text-white text-neutral-900 transition-all duration-300 transform hover:scale-110">
+          </div>
+          <div className="p-3 bg-white rounded-full shadow-lg text-neutral-900 transition-all duration-300 group-hover:scale-105">
             <ShoppingBag className="w-5 h-5" />
-          </button>
+          </div>
         </motion.div>
       </div>
 
@@ -66,7 +70,7 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
           {product.category}
         </p>
         <h3 className="font-bold text-neutral-900 text-base mb-2 group-hover:text-red-600 transition-colors duration-300">
-          <Link href={`/producto/${product.id}`}>{product.name}</Link>
+          {product.name}
         </h3>
         <p className="text-neutral-500 text-sm mb-3 line-clamp-2 leading-relaxed">
           {product.description}
@@ -91,18 +95,8 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
           </span>
         </div>
 
-        {/* Price */}
+        {/* Min order */}
         <div className="flex items-center justify-between">
-          <div className="flex items-baseline gap-2">
-            <span className="text-xl font-bold text-neutral-900">
-              ${product.price.toLocaleString("es-AR")}
-            </span>
-            {product.originalPrice && (
-              <span className="text-sm text-neutral-400 line-through">
-                ${product.originalPrice.toLocaleString("es-AR")}
-              </span>
-            )}
-          </div>
           {product.minOrder && (
             <span className="text-[10px] text-neutral-400 font-medium uppercase tracking-wider">
               Mín. {product.minOrder} u.
@@ -119,7 +113,7 @@ export default function FeaturedProducts() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 lg:py-28 bg-neutral-50" id="ofertas">
+    <section className="pt-10 lg:pt-12 pb-20 lg:pb-28 bg-neutral-50" id="ofertas">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-14 gap-4">

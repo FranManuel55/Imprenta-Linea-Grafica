@@ -185,24 +185,10 @@ export default function ProductoPage() {
               </div>
 
               {/* Price */}
-              <div className="flex items-baseline gap-3 mb-6">
-                <span className="text-3xl font-bold text-neutral-900">
-                  ${product.price.toLocaleString("es-AR")}
+              <div className="mb-6">
+                <span className="text-2xl font-bold text-red-600">
+                  Consultar precio por WhatsApp
                 </span>
-                {product.originalPrice && (
-                  <>
-                    <span className="text-xl text-neutral-400 line-through">
-                      ${product.originalPrice.toLocaleString("es-AR")}
-                    </span>
-                    <span className="px-2.5 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">
-                      -
-                      {Math.round(
-                        (1 - product.price / product.originalPrice) * 100
-                      )}
-                      %
-                    </span>
-                  </>
-                )}
               </div>
 
               <p className="text-neutral-600 text-base leading-relaxed mb-8">
@@ -359,8 +345,8 @@ export default function ProductoPage() {
                       <h3 className="font-bold text-neutral-900 text-sm group-hover:text-red-600 transition-colors">
                         {rp.name}
                       </h3>
-                      <span className="text-lg font-bold text-neutral-900 mt-2 block">
-                        ${rp.price.toLocaleString("es-AR")}
+                      <span className="text-sm font-bold text-red-600 mt-2 block">
+                        Consultar precio
                       </span>
                     </div>
                   </Link>

@@ -7,20 +7,23 @@ import { ArrowRight, Sparkles } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950">
-      {/* Background Image */}
+      {/* Background Image & Pattern */}
       <div className="absolute inset-0">
         <img
           src="/images/hero-bg.png"
           alt="Productos de imprenta premium"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/60 via-neutral-950/40 to-neutral-950" />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-transparent to-neutral-950/80" />
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808015_1px,transparent_1px),linear-gradient(to_bottom,#80808015_1px,transparent_1px)] bg-[size:32px_32px]" />
+        {/* Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/30 via-neutral-950/60 to-neutral-950" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-950/20 to-neutral-950/80" />
       </div>
 
       {/* Animated Red Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-red-500/8 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
+      <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-red-600/15 rounded-full blur-[120px] animate-float" />
+      <div className="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-red-700/15 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -125,7 +128,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-20 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

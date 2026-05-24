@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -20,8 +21,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-gradient-red flex items-center justify-center shadow-lg shadow-red-600/20">
-                <span className="text-white font-bold text-sm">LG</span>
+              <div className="relative w-11 h-11 rounded-full overflow-hidden bg-white shadow-lg shadow-red-600/20">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Línea Gráfica"
+                  fill
+                  sizes="44px"
+                  className="object-contain p-0.5"
+                />
               </div>
               <div>
                 <h3 className="text-white font-bold text-lg leading-tight">

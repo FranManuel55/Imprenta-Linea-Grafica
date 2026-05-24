@@ -13,7 +13,7 @@ export default function Categories() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 lg:py-28 bg-white" id="categorias">
+    <section className="pt-20 lg:pt-28 pb-10 lg:pb-12 bg-white" id="categorias">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
         <div className="text-center mb-16">
